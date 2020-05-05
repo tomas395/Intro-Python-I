@@ -14,6 +14,7 @@ import os
 if len(sys.argv) > 1:
     for arg in sys.argv:
         print(arg)
+        
 # Print out the OS platform you're using:
 print(sys.platform)
 

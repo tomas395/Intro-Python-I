@@ -10,7 +10,7 @@ for more info regarding list comprehensions.
 
 # Write a list comprehension to produce the array [1, 2, 3, 4, 5]
 
-y = []
+y = [x+1 for x in range(5)]
 
 print (y)
 
@@ -26,7 +26,7 @@ print(y)
 
 a = ["foo", "bar", "baz"]
 
-y = []
+y = [x.upper() for x in a]
 
 print(y)
 
