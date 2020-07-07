@@ -30,3 +30,36 @@ it should use today’s date to get the month and year.
 import sys
 import calendar
 from datetime import datetime
+
+now = datetime.now()
+
+print("now =", now)
+
+user_input = input(
+    "Please enter desired month and day. It needs to seperated by a comma:")
+
+
+def fetch_cal(dt):
+    if dt == "":
+        today = datetime.today()
+        ty = today.year
+        tm = today.month
+        print(calendar.month(ty, tm))
+    # This hits the first requirement. If the string is empty, it will just print todays date in the terminal.
+
+    elif "," in dt:
+        result = [x.strip() for x in dt.split(',')]
+        m = int(result[0])
+        y = int(result[1])
+
+    # If the user puts a comma in the field and the numbers are in the range, it's going to give the month and year requested.
+    # The .split is to make sure the leading and trailing characters are removed so it doesn't throw an error.
+
+        print(calendar.month(y, m))
+    else:
+        mo = int(dt)
+        yr = 2020
+        print(calendar.month(yr, mo))
+
+
+fetch_cal(user_input)
